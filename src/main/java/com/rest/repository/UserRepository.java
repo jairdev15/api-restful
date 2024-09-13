@@ -6,5 +6,4 @@ import com.rest.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{
 
-	
 }
