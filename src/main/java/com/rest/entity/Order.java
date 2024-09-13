@@ -8,8 +8,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "\"order\"") 
 public class Order {
 
 	@Id
@@ -17,7 +19,7 @@ public class Order {
     private Long id;
     
     @ManyToOne
-    private User user;
+    private UserEntity user;
     
     @ManyToMany
     private List<Product> products;
@@ -30,11 +32,11 @@ public class Order {
 		this.id = id;
 	}
 
-	public User getUser() {
+	public UserEntity getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(UserEntity user) {
 		this.user = user;
 	}
 
